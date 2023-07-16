@@ -34,6 +34,4 @@
   void service_send_buffer(byte);
   void check_ptt_tail(void);
   void check_for_dirty_configuration(void);
-  void tone(uint32_t, uint32_t, uint32_t);
-  void noTone(uint32_t);
   void serial_status(PRIMARY_SERIAL_CLS*);
