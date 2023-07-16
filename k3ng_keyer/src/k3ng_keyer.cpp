@@ -17159,6 +17159,7 @@ byte play_memory(byte memory_number) {
 
   } //for (int y = (memory_start(memory_number)); (y < (memory_end(memory_number)+1)); y++)
 
+  return 0;
 }
 #endif
 
@@ -18438,7 +18439,7 @@ void initialize_display(){
       byte oldSideTone = configuration.sidetone_mode;
       key_tx = 0;
       configuration.sidetone_mode = SIDETONE_ON;
-      char* hi_text = HI_TEXT;
+      const char* hi_text = HI_TEXT;
       for (int x = 0;x < strlen(hi_text);x++){
         send_char(hi_text[x],KEYER_NORMAL);
       }
