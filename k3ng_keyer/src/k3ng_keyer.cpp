@@ -1385,6 +1385,7 @@ If you offer a hardware kit using this software, show your appreciation by sendi
 
 #define eeprom_magic_number 41               // you can change this number to have the unit re-initialize EEPROM
 
+#include <Arduino.h>
 #include <stdio.h>
 #include "keyer_hardware.h"
 
@@ -1655,6 +1656,9 @@ If you offer a hardware kit using this software, show your appreciation by sendi
 
 
 #define memory_area_start (sizeof(configuration)+5)
+
+// function prototypes
+#include "keyer_prototypes.h"
 
 // Variables and stuff
 struct config_t {  // 120 bytes total
