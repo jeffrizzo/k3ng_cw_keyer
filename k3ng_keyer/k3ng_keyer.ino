@@ -2191,6 +2191,14 @@ If you offer a hardware kit using this software, show your appreciation by sendi
 #endif
 #endif
 
+#if !defined(NETWORK_CLIENT_CLS)
+  // No network feature enabled.  PlatformIO generates function prototypes from the raw .ino source without
+  // evaluating #if blocks, so the #ifdef'ed-out web server functions still get prototypes that name this
+  // type.  An incomplete placeholder class is enough for those declarations to compile.
+  class network_client_unused;
+  #define NETWORK_CLIENT_CLS network_client_unused
+#endif
+
 #define memory_area_start (sizeof(configuration)+5)
 
 // Variables and stuff

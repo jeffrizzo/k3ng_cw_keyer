@@ -5,3 +5,14 @@ The K3NG Keyer is an open source Arduino based CW (Morse Code) keyer with a lot 
 
 Documentation is located here:
 https://github.com/k3ng/k3ng_cw_keyer/wiki
+
+## Building with PlatformIO
+
+The sketch can also be built with [PlatformIO](https://platformio.org/) from the repository root. The Arduino IDE layout is unchanged; `platformio.ini` points PlatformIO at `k3ng_keyer/` and the bundled `libraries/`.
+
+    pio run                              # build for Arduino Nano (new bootloader)
+    pio run -e nano -t upload            # build and upload
+    pio run -e nano_oldbootloader -t upload   # Nano clones with the old bootloader
+    pio device monitor                   # serial monitor at 115200
+
+Hardware profiles and features are still selected by editing `keyer_hardware.h` and the `keyer_features_and_options*.h` files.
